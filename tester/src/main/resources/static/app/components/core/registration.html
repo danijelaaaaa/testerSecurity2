@@ -1,0 +1,36 @@
+<h2>Registration</h2>
+
+<form id="formLogin">
+	<fieldset>
+		
+		<label>Name:</label>
+		<input ng-model="user.name" name="name">
+		<br />
+		
+		<label>Last name:</label>
+		<input ng-model="user.lastname" name="lastname">
+		<br />
+
+		<label>Username:</label>
+		<input  ng-model="user.username" name="username">
+		<br />
+		
+		
+		<label>Password:</label>
+		<input type="password" ng-model="user.password" name="password">
+		
+		
+		<br />
+		<label>Email:</label>
+		<input ng-model="user.email" name="email">
+		<br />
+		
+
+	</fieldset>
+	<div class="highlightcolorBlack">
+		<button type="submit" ng-click="registration(user)" form="formQuestion" name="save" class="button">
+			Submit
+		</button>
+		
+	</div>
+</form>

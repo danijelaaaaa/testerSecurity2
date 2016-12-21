@@ -1,0 +1,16 @@
+	<header>
+		<div class="top darkNoise">
+			<a href="http://www.levi9.com/" target="_blank">Levi9 IT Services</a>
+			<a href="">SR</a>
+			<a href="">EN</a>
+			<a ng-click="logOut()">LogOut</a>
+			<div ng-show="session.getFullName()"> Hi {{ session.getFullName() }}!</div>
+		</div>
+		<h1>Taster</h1>
+		<ul id="mainMenu" ng-show = "auth.isAdmin()">
+			<li ><a class="dashBoard" ui-sref='main.categories' >Home</a></li>
+			<li><a class="categories" ui-sref='main.categories' >Categories</a></li>
+			<li role="presentation"><a ui-sref='main.questions' >Questions</a></li>
+			<li ><a ui-sref='main.tests' >Tests</a></li>
+		</ul>
+	</header>

@@ -1,0 +1,52 @@
+
+<div id="pdf">
+<h2>
+	Tests
+</h2>
+
+<table class="dataTable">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Date Created</th>
+			<th>Created By</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<tr ng-repeat = "test in tests">
+					<td>{{test.id}}</td>
+					<td>{{test.name}}</td>
+					<td>{{test.createDate | date:'dd-MM-yyyy'}} </td>
+					<td>{{test.createdBy}}</td>
+				
+						<!-- <td class="highlightcolorBlack">
+							<a ng-click="beforeEditQuestion(question.id)" class="button">Add/Remove Question</a>
+						</td>
+						<td class="highlightcolorBlack">
+							<a ng-click="beforeEditQuestion(question.id)" class="button">Edit Test</a>
+						</td> -->
+						<td class="highlightcolorBlack" ng-show = "auth.isAdmin()">
+							<a ng-click="removeTest(test.id)" class="button">Remove Test</a>
+						</td>
+		</tr>
+
+		
+	</tbody>
+</table>
+
+</div>
+
+
+<div class="highlightcolorBlack" ng-show = "auth.isAdmin()">
+	<a ng-click="popUpPdf()"class="button">Pdf</a>
+</div>
+
+
+<div class="highlightcolorBlack" ng-show = "auth.isAdmin()">
+	<a ui-sref='main.addTest' class="button">Add new test</a>
+</div>

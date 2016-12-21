@@ -1,0 +1,18 @@
+<h2>
+	Edit Category
+</h2>
+
+<form id="formCategory" ng-init=getCategory()>
+	<fieldset>
+		<label>Name</label>
+		<input ng-model="category.name" name="name" >
+	</fieldset>
+	<div class="highlightcolorBlack">
+		<button type="submit" ng-click="editCategory()" form="formCategory" name="save" class="button">
+			Save
+		</button>
+		<button type="submit" form="formCategory" name="cancel" class="button">
+			Cancel
+		</button>
+	</div>
+</form>

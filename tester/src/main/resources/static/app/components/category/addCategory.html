@@ -1,0 +1,18 @@
+<h2>
+	Add Category
+</h2>
+
+<form id="formCategory" >
+	<fieldset>
+		<label>Name</label>
+		<input ng-model="category.name" name="name" >
+	</fieldset>
+	<div class="highlightcolorBlack">
+		<button type="submit" ng-click="addCategory(category)" form="formCategory" name="save" class="button">
+			Save
+		</button>
+		<button type="submit" form="formCategory" name="cancel" class="button">
+			Cancel
+		</button>
+	</div>
+</form>

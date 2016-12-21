@@ -1,0 +1,47 @@
+<h2>
+	Add question
+</h2>
+
+<form id="formQuestion" ng-init=getQuestion()>
+<fieldset>
+	
+		<label>Content</label>
+		<input ng-model="question.content" name="content" >
+		<br />
+		<label>Category</label>
+		
+		
+		<select id="categorySelect" name="categorySelect" ng-model="question.category.name" >
+    		<option  ng-repeat="cat in categories" ng-value="{{cat.name}}">{{cat.name}}</option>
+   		</select>
+		
+		<br/>
+		<div ng-if = "question.answers.length > 0" >
+		<label>Answers</label>
+
+		<ol>
+			<div ng-repeat="answer in question.answers">
+
+				<li>{{answer.content}} <span ng-if="answer.correct"> -
+						correct </span>
+				</li>
+
+			</div>
+		</ol>
+		</div>
+		<br />
+
+		
+		
+		
+
+</fieldset>	
+<div class="highlightcolorBlack">
+		<button type="submit" ng-click="editQuestion()" form="formQuestion" name="save" class="button">
+			Save
+		</button>
+		<button type="submit" form="formQuestion" name="cancel" class="button">
+			Cancel
+		</button>
+	</div>
+</form>

@@ -1,0 +1,37 @@
+<h2>
+	Questions
+</h2>
+
+
+<div ng-repeat="question in questions" >
+		
+	
+		<div>
+			<div>{{question.content}}</div>
+			<div> Kategorija: {{question.category.name}} </div>
+			
+			<div ng-if = "question.answers.length > 0" >
+			Answers:
+				<ol>
+					<div ng-repeat="answer in question.answers">
+				
+						<li>{{answer.content}}
+							<span ng-if="answer.correct" >
+							 - correct
+							</span>
+						</li>
+					
+					</div>
+				</ol>
+			</div>
+			<div class="highlightcolorBlack">
+				<a ng-click="beforeEditQuestion(question.id)" class="button">Edit</a>
+				<a ng-click="removeQuestion(question.id)" class="button">Remove</a>
+			</div>
+		</div>
+</div>
+
+
+<div class="highlightcolorBlack"  ng-show= "auth.isAdmin()">
+	<a ui-sref='main.addQuestion' class="button">Add new question</a>
+</div>

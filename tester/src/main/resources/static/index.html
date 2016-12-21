@@ -1,0 +1,102 @@
+<html>
+ <head>
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="viewport" content="initial-scale=1.0">
+     <meta charset="utf-8">
+ <title>Tester</title>
+ 
+ <!-- Bootstrap -->
+ 
+ <link href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">  
+ <link href="app/css/screen.css" rel="stylesheet">
+ 
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="/webjars/jquery/2.1.4/jquery.min.js"></script>
+ 
+ <!-- Include all compiled plugins (below), or include individual files as needed -->
+ <script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>  
+ <script src="/webjars/angularjs/1.5.8/angular.js"></script> 
+ <script src="/webjars/angular-ui-router/0.2.0/angular-ui-router.js"></script> 
+
+          <!-- 
+     <script src="/webjars/angular-cookies/1.4.5/angular-cookies.js"></script>  
+  <script src="/webjars/angular-translate/2.5.0/angular-translate.js"></script>  
+  <script src="/webjars/angular-sanitize/1.3.0-beta.18/angular-sanitize.js"></script>  
+       
+       
+       -->
+     <script type="text/javascript" src="app/app.module.js"></script>
+     <script type="text/javascript" src="app/localStorage.factory.js"></script>
+     <script type="text/javascript" src="app/auth.service.js"></script>
+     <script type="text/javascript" src="app/session.service.js"></script>
+     <script type="text/javascript" src="app/components/core/core.module.js"></script>
+     <script type="text/javascript" src="app/components/core/core.route.js"></script>
+     <script type="text/javascript" src="app/components/core/user.js"></script>
+     <script type="text/javascript" src="app/components/category/category.module.js"></script>
+     <script type="text/javascript" src="app/components/category/category.js"></script>
+     <script type="text/javascript" src="app/components/category/category.route.js"></script>
+     <script type="text/javascript" src="app/components/category/category.service.js"></script>
+     
+     <script type="text/javascript" src="app/components/question/question.module.js"></script>
+     <script type="text/javascript" src="app/components/question/question.js"></script>
+     <script type="text/javascript" src="app/components/question/question.route.js"></script>
+     <script type="text/javascript" src="app/components/question/question.service.js"></script>
+     
+     <script type="text/javascript" src="app/components/test/test.module.js"></script>
+     <script type="text/javascript" src="app/components/test/test.js"></script>
+     <script type="text/javascript" src="app/components/test/test.route.js"></script>
+     <script type="text/javascript" src="app/components/test/test.service.js"></script>
+     
+     <script type="text/javascript" src="app/js/jspdf.js"></script>
+     
+     
+<!-- <script type="text/javascript" src="app/components/core/core.module.js"></script>
+     <script type="text/javascript" src="app/components/core/core.route.js"></script>
+     <script type="text/javascript" src="app/components/core/core.controller.js"></script>
+     <script type="text/javascript" src="app/components/core/Services/category.service.js"></script>
+     <script type="text/javascript" src="app/components/core/Services/question.service.js"></script>
+     <script type="text/javascript" src="app/components/core/Services/test.service.js"></script>
+     <script type="text/javascript" src="app/components/core/Services/home.service.js"></script> -->
+     
+    
+</head>
+<body ng-app="tester" >
+ 
+<!--  <div ng-show="!authenticated" class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#/test" translate="TESTS"></a> 
+    </div>
+   </div>
+  </div> -->
+<!--  
+  <div ng-show="authenticated" class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#/profile" translate="PROFILE"></a> 
+     <a ng-if="userrole == 'ROLE_ADMIN'" class="navbar-brand" href="#/home" translate="CATEGORIES"></a> 
+     <a ng-if="userrole == 'ROLE_ADMIN'" class="navbar-brand" href="#/question" translate="QUESTIONS"></a> 
+     <a class="navbar-brand" href="#/test" translate="TESTS"></a> 
+     <a class="navbar-brand" href="#/chooseTest" translate="CHOOSEATEST"></a> 
+     <a ng-show="authenticated" class="navbar-brand" ng-click="logout()" translate="LOGOUT"></a> 
+     
+    </div>
+   </div>
+  </div>
+   -->
+
+    
+  
+  <div ui-view="header"></div>
+  <section id="mainContent">
+ 	 <div ui-view="content"></div>
+  </section>
+  <footer>
+  <div class="darkNoise">Levi9 IT Services</div>
+  </footer>
+  
+
+  
+ </body>
+</html>

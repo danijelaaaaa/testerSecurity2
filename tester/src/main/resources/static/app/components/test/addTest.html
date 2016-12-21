@@ -1,0 +1,25 @@
+<h2>Add test</h2>
+
+<form id="formTest" ng-init=initAddTest()>
+	<fieldset>
+		<label>Name</label>
+		<input ng-model="test.name" name="name" >
+		<br />
+		
+		<label>Questions</label>
+		
+		<div ng-repeat="question in questions">
+			{{question.content}}
+			<label>Add Question </label>
+			<input type="checkbox" ng-model="question_cb[question.id]"/>
+		</div>
+		
+		
+		<br />
+		
+	</fieldset>
+	<div class="highlightcolorBlack">
+		<button type="submit" ng-click="addTest()" form="formQuestion"
+			name="save" class="button">Save</button>
+	</div>
+</form>

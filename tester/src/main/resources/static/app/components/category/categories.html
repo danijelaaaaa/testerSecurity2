@@ -1,0 +1,29 @@
+<h2>
+	Categories
+</h2>
+<table class="dataTable">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+
+			<tr ng-repeat="category in categories">
+				<td>{{category.id}}</td>
+				<td>{{category.name}}</td>
+				<td class="highlightcolorBlack"><a ng-click="beforeEditCategory(category.id)" class="button">Edit</a></td>
+				<td class="highlightcolorBlack"><a ng-click="removeCategory(category.id)" class="button">Remove</a></td>
+				
+			</tr>
+
+	</tbody>
+</table>
+
+
+<div class="highlightcolorBlack"  ng-show= "auth.isAdmin()">
+	<a ui-sref='main.addCategory' class="button">Add new category</a>
+</div>
