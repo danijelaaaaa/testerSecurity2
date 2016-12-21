@@ -4,6 +4,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import tester.tester.model.User;
 import tester.tester.repository.UserRepository;
@@ -15,6 +16,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public User login(String username, String password) {
@@ -24,8 +28,14 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User registration(User u) {
-		
+		u.setPassword(bCryptPasswordEncoder.encode(u.getPassword()));
 		return userRepository.save(u);
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		
+		return userRepository.findByUsername(username);
 	}
 	
 

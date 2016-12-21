@@ -29,3 +29,4 @@ insert into testquestions(TEST_ID, QUESTION_ID) values ('2', '4');
 
 insert into user(NAME, LASTNAME, USERNAME, PASSWORD, EMAIL, ROLE) values ('Danijela', 'Petrovic', 'danijela', 'danijela', 'danijelaaaaa@gmail.com', 'ADMIN');
 insert into user(NAME, LASTNAME, USERNAME, PASSWORD, EMAIL, ROLE) values ('Neko', 'Neko', 'neko', 'neko', 'neko@gmail.com', 'USER');
+insert into user(NAME, LASTNAME, USERNAME, PASSWORD, EMAIL, ROLE) values ('trala', 'trala', 'trala', '$2a$10$DEuR3a.g.Tjkx4ScID8/ZOoTOIQgc1C97Yy4WeLkHC/VLc8PdzupS', 'trala', 'USER');

@@ -1,9 +1,6 @@
 package tester.tester.controller;
 
 
-import java.io.Console;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,29 +24,31 @@ public class UserController {
 	@Autowired
 	private SecurityService securityService;
 	
-	@Autowired
-	HttpSession httpSession;
 	
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public ResponseEntity<User> login(@RequestBody User u){
 		
 		//System.out.println(u.getUsername()+u.getPassword());
-		User user = new User();
-		user = userService.login(u.getUsername(), u.getPassword());
+		//User user = new User();
+		
+	//	user = userService.login(u.getUsername(), u.getPassword());
+		User user = userService.findByUsername(u.getUsername());
+		
+		//System.out.println(user.getUsername());
 		securityService.autologin(u.getUsername(), u.getPassword());
+		//securityService.autologin(user.getUsername(), BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
 		user.setToken(user.generateToken());
 	
-		httpSession.setAttribute("user", user);
 		
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/logout",method = RequestMethod.GET)
+	/*@RequestMapping(value="/logout",method = RequestMethod.GET)
 	public ResponseEntity<String> logout(){
 		
 		
 		return new ResponseEntity<String>(HttpStatus.OK);
-	}
+	}*/
 	
 	@RequestMapping(value="/registration", method = RequestMethod.POST)
 	public ResponseEntity<User> registration(@RequestBody User u){

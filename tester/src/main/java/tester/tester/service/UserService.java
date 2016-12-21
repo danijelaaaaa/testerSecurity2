@@ -5,5 +5,6 @@ import tester.tester.model.User;
 public interface UserService {
 	
 	User login(String username, String password);
+	User findByUsername(String username);
 	User registration(User u);
 }

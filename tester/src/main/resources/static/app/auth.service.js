@@ -53,7 +53,7 @@
     */
     this.logOut = function(){
       return $http
-        .get('/users/logout')
+        .post('logout')
         .then(function(response){
         	console.log("Loging out");
           // Destroy session in the browser
