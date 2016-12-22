@@ -30,6 +30,9 @@ public class User {
 	@Column(name = "password", nullable = false, unique = false)
 	private String password;
 	
+/*	@Column(name = "active_password", nullable = false, unique = false)
+	private String activePassword;*/
+	
 	@Column(name = "email", nullable = false, unique = false)
 	private String email;
 	
@@ -110,6 +113,8 @@ public class User {
 	public User() {
 	}
 	
+	
+
 	public String generateToken() {
 
 		SecureRandom random = new SecureRandom();

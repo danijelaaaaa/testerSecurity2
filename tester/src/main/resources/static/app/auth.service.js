@@ -27,22 +27,17 @@
     * @param credentials
     * @returns {*|Promise}
     */
-    this.logIn = function(credentials){
+    this.logIn = function(credentials, callback, errorCallback){
       return $http
         .post('/users/login', credentials)
         .then(function(response){
         	
-          var data = response.data;
-
-          		
-	          session.setUser(data);
-	          session.setAccessToken(data.token);
-	          
-	          $state.go('main.tests');
-	          
-	          
-	          
-          //}
+        	callback(response);
+        	
+        }, function(response){
+        	
+        	errorCallback(response);
+        	
         });
     };
 
@@ -59,30 +54,26 @@
           // Destroy session in the browser
         	
         	session.destroy();
-        	
-        
-             
          
         });
 
     };
     
     
-    this.registrate = function(user){
+    this.registrate = function(user, callback, errorCallback){
         return $http
           .post('/users/registration', user)
           .then(function(response){
-            var data = response.data;
-            
-            //odmah logovanje poslije registracije
-            
-            session.setUser(data.user);
-            session.setAccessToken("trala");
-      
-            
+          	callback(response);
+        
+          }, function(response){
+          	errorCallback(response);
+          	
           });
       };
     
+    
+ 
     
 
   }

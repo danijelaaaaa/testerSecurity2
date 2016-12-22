@@ -7,4 +7,5 @@ import tester.tester.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 	User findByUsernameAndPassword(String username, String password);
 	User findByUsername(String username);
+	User findOne(Long id);
 }

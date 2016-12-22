@@ -28,18 +28,15 @@ public class UserController {
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public ResponseEntity<User> login(@RequestBody User u){
 		
-		//System.out.println(u.getUsername()+u.getPassword());
-		//User user = new User();
-		
-	//	user = userService.login(u.getUsername(), u.getPassword());
 		User user = userService.findByUsername(u.getUsername());
 		
-		//System.out.println(user.getUsername());
+        if (user == null) {
+            System.out.println("User not found");
+            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
+        }
+
 		securityService.autologin(u.getUsername(), u.getPassword());
-		//securityService.autologin(user.getUsername(), BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
 		user.setToken(user.generateToken());
-	
-		
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
@@ -53,7 +50,16 @@ public class UserController {
 	@RequestMapping(value="/registration", method = RequestMethod.POST)
 	public ResponseEntity<User> registration(@RequestBody User u){
 		u.setRole("USER");
-		User user = new User();
+	//	User user = new User();
+		
+		User user = userService.findByUsername(u.getUsername());
+
+		if(user != null){
+			
+			System.out.println("A User with username " + u.getUsername() + " already exist");
+            return new ResponseEntity<User>(HttpStatus.CONFLICT);
+		}
+		
 		user = userService.registration(u);
 		securityService.autologin(u.getUsername(), u.getPassword());
 		return new ResponseEntity<User>(user, HttpStatus.OK);
