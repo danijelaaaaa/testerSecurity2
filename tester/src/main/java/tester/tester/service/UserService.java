@@ -9,5 +9,4 @@ public interface UserService {
 	User registration(User u);
 	User findOne(Long id);
 	
-	
 }

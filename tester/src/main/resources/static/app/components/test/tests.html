@@ -23,13 +23,7 @@
 					<td>{{test.name}}</td>
 					<td>{{test.createDate | date:'dd-MM-yyyy'}} </td>
 					<td>{{test.createdBy}}</td>
-				
-						<!-- <td class="highlightcolorBlack">
-							<a ng-click="beforeEditQuestion(question.id)" class="button">Add/Remove Question</a>
-						</td>
-						<td class="highlightcolorBlack">
-							<a ng-click="beforeEditQuestion(question.id)" class="button">Edit Test</a>
-						</td> -->
+
 						<td class="highlightcolorBlack" ng-show = "auth.isAdmin()">
 							<a ng-click="removeTest(test.id)" class="button">Remove Test</a>
 						</td>

@@ -1,23 +1,14 @@
-<h2>
-	Add question
-</h2>
+<h2>Add question</h2>
 
 <form id="formQuestion" ng-init=initAddQuestion()>
-<fieldset>
-	
-		<label>Content</label>
-		<input ng-model="question.content" name="content" >
-		<br />
-		<label>Category</label>
-		
-		<select name="category" ng-model="question.category.id">
-			<option ng-repeat = "category in categories" ng-value="{{category.id}}">
-				{{category.name}}
-			</option>
-		</select>
-		<br/>
-		
-		<label>Answers</label>
+	<fieldset>
+
+		<label>Content</label> <input ng-model="question.content"
+			name="content"> <br /> <label>Category</label> <select
+			name="category" ng-model="question.category.id">
+			<option ng-repeat="category in categories" ng-value="{{category.id}}">
+				{{category.name}}</option>
+		</select> <br /> <label>Answers</label>
 
 		<ol>
 			<div ng-repeat="answer in question.answers">
@@ -32,32 +23,30 @@
 		<br />
 
 		<div ng-show="showAddAnswer">
-		
-			<input ng-model="answerTemp.content" name="content" >
-			<label>Correct</label>
-			<input type="checkbox" ng-model="answerTemp.correct"/>
-			<br />
-			
-		</div>
-	
-		
-		 <div class="highlightcolorBlack">
-			<a ng-show="!showAddAnswer" ng-click="showAddAnswer=true" class="button">Add answer</a>
-		</div>
-		
-		 <div class="highlightcolorBlack">
-			<a ng-show="showAddAnswer" ng-click = "saveAnswer()" class="button">Save answer</a>
-		</div>
-		
-		
 
-</fieldset>	
-<div class="highlightcolorBlack">
-		<button type="submit" ng-click="addQuestion()" form="formQuestion" name="save" class="button">
-			Save
-		</button>
+			<input ng-model="answerTemp.content" name="content"> <label>Correct</label>
+			<input type="checkbox" ng-model="answerTemp.correct" /> <br />
+
+		</div>
+
+
+		<div class="highlightcolorBlack">
+			<a ng-show="!showAddAnswer" ng-click="showAddAnswer=true"
+				class="button">Add answer</a>
+		</div>
+
+		<div class="highlightcolorBlack">
+			<a ng-show="showAddAnswer" ng-click="saveAnswer()" class="button">Save
+				answer</a>
+		</div>
+
+
+
+	</fieldset>
+	<div class="highlightcolorBlack">
+		<button type="submit" ng-click="addQuestion()" form="formQuestion"
+			name="save" class="button">Save</button>
 		<button type="submit" form="formQuestion" name="cancel" class="button">
-			Cancel
-		</button>
+			Cancel</button>
 	</div>
 </form>

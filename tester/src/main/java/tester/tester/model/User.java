@@ -11,8 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "user")
 public class User {
-	
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -20,29 +19,23 @@ public class User {
 
 	@Column(name = "name", nullable = false, unique = false)
 	private String name;
-	
+
 	@Column(name = "lastname", nullable = false, unique = false)
 	private String lastname;
-	
+
 	@Column(name = "username", nullable = false, unique = false)
 	private String username;
-	
+
 	@Column(name = "password", nullable = false, unique = false)
 	private String password;
-	
-/*	@Column(name = "active_password", nullable = false, unique = false)
-	private String activePassword;*/
-	
+
 	@Column(name = "email", nullable = false, unique = false)
 	private String email;
-	
+
 	@Column(name = "role", nullable = false, unique = false)
 	private String role;
-	
-	
+
 	private String token;
-	
-	
 
 	public String getToken() {
 		return token;
@@ -67,7 +60,6 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
 
 	public String getUsername() {
 		return username;
@@ -84,7 +76,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 
 	public String getName() {
 		return name;
@@ -112,8 +103,6 @@ public class User {
 
 	public User() {
 	}
-	
-	
 
 	public String generateToken() {
 
@@ -121,9 +110,8 @@ public class User {
 		byte bytes[] = new byte[20];
 		random.nextBytes(bytes);
 		String token = bytes.toString();
-		
+
 		return token;
 	}
-	
 
 }

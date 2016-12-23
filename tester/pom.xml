@@ -34,11 +34,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-mail</artifactId>
-	</dependency>
-		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -56,13 +56,12 @@
 			<version>1.5.8</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.webjars.bower/angular-resource -->
+
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>angular-resource</artifactId>
 			<version>1.5.8</version>
 		</dependency>
-
 
 
 		<dependency>
@@ -84,10 +83,10 @@
 			<version>0.2.0</version>
 		</dependency>
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-security</artifactId>
-	</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 
 
 	</dependencies>

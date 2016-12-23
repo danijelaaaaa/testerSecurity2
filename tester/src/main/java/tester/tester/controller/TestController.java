@@ -21,36 +21,33 @@ import tester.tester.service.TestService;
 @RestController
 @RequestMapping(value = "/tests")
 public class TestController {
-	
+
 	@Autowired
 	TestService testService;
-	
-	
+
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<Test>> getTests(){
+	public ResponseEntity<List<Test>> getTests() {
 		List<Test> listOfTests = new ArrayList<Test>();
 		listOfTests = testService.findAll();
-		
+
 		return new ResponseEntity<List<Test>>(listOfTests, HttpStatus.OK);
 	}
-	
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Test> addTest(@RequestBody Test t){
+
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Test> addTest(@RequestBody Test t) {
 		t.setCreateDate(new Date());
 		t.setCreatedBy("Danijela");
-		
+
 		Test test = testService.addTest(t);
-		
+
 		return new ResponseEntity<Test>(test, HttpStatus.CREATED);
 	}
-	
-	
-	@RequestMapping(value="/id/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<String> removeTest(@PathVariable Long id){
+
+	@RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<String> removeTest(@PathVariable Long id) {
 		testService.removeTest(id);
 		return new ResponseEntity<String>(HttpStatus.OK);
-		
+
 	}
-	
 
 }

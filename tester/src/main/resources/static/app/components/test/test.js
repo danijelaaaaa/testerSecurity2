@@ -15,10 +15,6 @@
  		$scope.test = {};
  		$scope.test.questions = [];
  		$scope.question_cb = [];
- 		/*$scope.question_cb.object = {};
- 		$scope.question_cb.object.id = null;
- 		$scope.question_cb.object.check = null;*/
- 		
  		promise_tests = TestService.getTests();
  		promise_tests.then(function (data){
  			$scope.tests= data ;
@@ -32,11 +28,7 @@
  	 		promise_questions.then(function (data){
  	 			$scope.questions = data ;
  	 			console.log(data);
- 	 			
- 	 		/*	angular.forEach($scope.questions, function(value, index) {
- 	 				$scope.question_cb[index] ={'id': value.id,'check': false};
- 	 				
- 	 			});*/
+
  	 			
  	 		});
  	 		
@@ -53,10 +45,7 @@
 	 	 			$scope.test.questions.push(questionTemp);
  	 			}
 	 		});	
- 	 		
- 	 	//	$scope.test.createdBy = "Danijela";
- 	 	//	$scope.test.createDate = "1481192897000";
- 	 		console.log($scope.test);
+
  	 		
  	 		promise_add = TestService.addTest($scope.test);
  			promise_add.then(function (data) {
@@ -65,9 +54,7 @@
 	 			$state.go("main.tests");
 
 	 		});
- 	 		
- 	 		
- 	 		
+	 		
  		};
  		
  		
